@@ -50,7 +50,7 @@ jobs:
             type=ref,event=pr,prefix=${{ env.TAG_PREFIX }}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-            type=sha
+            type=sha,prefix=${{ env.TAG_PREFIX }}
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@v6
